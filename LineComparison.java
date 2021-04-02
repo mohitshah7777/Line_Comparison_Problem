@@ -1,37 +1,21 @@
-import java.util.Scanner;
-
 public class LineComparison {
 
-	public static void main(String[] args) {
-
-		System.out.println("Enter coordinates of line 1");
-		Scanner scan=new Scanner(System.in);
-		System.out.println("Enter x1, x2, y1, y2 = ");
-		int ax1=scan.nextInt();
-		int ax2=scan.nextInt();
-		int ay1=scan.nextInt();
-		int ay2=scan.nextInt();
-		
-		int diff_ax=ax2-ax1;
-		int power=2;
-		int diff_ay=ay2-ay1;
-		Double length1=Math.sqrt(Math.pow(diff_ax,power) + Math.pow(diff_ay,power));
-		System.out.println("Length of line 1 is = " + length1);	
+	public Double LengthOfLine(Double x1, Double x2, Double y1, Double y2)
+	{
+		Double lengthofline=Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2));
+		//System.out.println("Length of line is = " + lengthofline);
+		return lengthofline;
+	}
 	
-		System.out.println("Enter coordinates of line 2");		
-		System.out.print("Enter x1, x2 ,y1 ,y2 = ");
-		int bx1=scan.nextInt();
-		int bx2=scan.nextInt();
-		int by1=scan.nextInt();
-		int by2=scan.nextInt();
-		
-		int diff_bx=bx2-bx1;
-		int diff_by=by2-by1;
-		Double length2=Math.sqrt(Math.pow(diff_bx,power) + Math.pow(diff_by,power));
-		System.out.println("Length of line 2 is = " + length2);	
-		
-		System.out.println("Are both the lines equal? " + length1.equals(length2));
-		int compare=(length1.compareTo(length2));
+	public static boolean equalMethod(Double val1, Double val2)
+	{
+		System.out.println("Are both the lines equal? " + val1.equals(val2));
+		return val1.equals(val2);
+	}
+	
+	public static void compareMethod(Double val1, Double val2)
+	{
+		int compare=(val1.compareTo(val2));
 		if(compare > 0)
 			System.out.println("Length of line 1 is greater");
 		else if(compare < 0)
@@ -39,5 +23,19 @@ public class LineComparison {
 		else
 			System.out.println("Lengths are equal");
 	}
+	
+	public static void main(String[] args) {
 
+		LineCompOOP obj1 = new LineCompOOP();
+		LineCompOOP obj2 = new LineCompOOP();
+		
+		Double val1=obj1.LengthOfLine(1.0, 2.0, 4.0, 5.0);
+		System.out.println("Length of line 1 is = "+val1);
+		Double val2=obj2.LengthOfLine(4.0, 5.0, 6.0, 9.0);
+		System.out.println("Length of line 2 is = "+val2);
+		
+		equalMethod(val1, val2);
+		compareMethod(val1, val2);
+		
+	}
 }
