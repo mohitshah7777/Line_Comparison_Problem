@@ -26,8 +26,8 @@ public class LineComparison {
 	
 	public static void main(String[] args) {
 
-		LineCompOOP obj1 = new LineCompOOP();
-		LineCompOOP obj2 = new LineCompOOP();
+		LineComparison obj1 = new LineComparison();
+		LineComparison obj2 = new LineComparison();
 		
 		Double val1=obj1.LengthOfLine(1.0, 2.0, 4.0, 5.0);
 		System.out.println("Length of line 1 is = "+val1);
