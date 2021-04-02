@@ -24,13 +24,20 @@ public class LineComparison {
 		int bx2=scan.nextInt();
 		int by1=scan.nextInt();
 		int by2=scan.nextInt();
-
+		
 		int diff_bx=bx2-bx1;
 		int diff_by=by2-by1;
 		Double length2=Math.sqrt(Math.pow(diff_bx,power) + Math.pow(diff_by,power));
-		System.out.println("Length of line 2 is = " + length2);
-
+		System.out.println("Length of line 2 is = " + length2);	
+		
 		System.out.println("Are both the lines equal? " + length1.equals(length2));
+		int compare=(length1.compareTo(length2));
+		if(compare > 0)
+			System.out.println("Length of line 1 is greater");
+		else if(compare < 0)
+			System.out.println("Length of line 2 is greater");
+		else
+			System.out.println("Lengths are equal");
 	}
 
 }
